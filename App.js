@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View , Button, Platform} from 'react-native';
+import { StyleSheet, Text, View , Platform} from 'react-native';
 import { createDrawerNavigator,createMaterialTopTabNavigator,createAppContainer, createStackNavigator } from "react-navigation";
 import ProjectScreen from './Section/Project/ProjectScreen';
 import ResponsibilityScreen from './Section/Responsibility/ResponsibiltyScreen';
 import RunwayScreen from './Section/Runway/RunwayScreen';
 import { Ionicons } from '@expo/vector-icons';
+import NavigationMenu from './Common/NavigationMenu';
 
 
 class HomeScreen extends React.Component {
@@ -44,7 +45,7 @@ const GoalsTopNavigator = createMaterialTopTabNavigator({
 });
 
 const GoalsStackNavigator = createStackNavigator({
-    Runway : GoalsTopNavigator
+    Goals : GoalsTopNavigator
   },{
   defaultNavigationOptions: ({navigation})=>({
     headerTitle:'Goals',
@@ -69,6 +70,7 @@ const MyDrawerNavigator = createDrawerNavigator({
   Goals:GoalsStackNavigator
 },
 {
+  contentComponent: NavigationMenu,
   drawerType:'slide'
 }
 );

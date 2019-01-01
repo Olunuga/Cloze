@@ -1,21 +1,54 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, StyleSheet } from 'react-native';
+import {StyleSheet,Platform } from 'react-native';
 
-export const textStyles = StyleSheet.create({
-  h1: {
-    fontSize:96,
-    fontWeight: bold,
-    lineHeight:38
+export const NavigationStyles = StyleSheet.create({
+  container:{
+      marginTop: Platform.OS == 'Ios'? 0:24
   },
-  h6: {
-    fontSize:20,
-    fontWeight: medium,
-    lineHeight:26
+  menuGroup:{
+      borderTopWidth: 0.5,
+      borderTopColor:'#cccccc',
+      backgroundColor:'white',
+      paddingTop:5,
+      paddingBottom:16,
+      marginBottom:10
   },
-  button: {
-    fontSize:14,
-    textTransform: uppercase,
-    lineHeight:16
-  }
 
+  menuGroupLabel:{
+     color:'gray',
+     paddingLeft:16,
+     paddingBottom:5,
+     paddingTop:5,
+     paddingRight:16
+  },
+  menuItem:{
+      paddingLeft:16,
+      paddingRight:16,
+      backgroundColor:'white',
+      height:50,
+      flex:1,
+      flexDirection:'row',
+      justifyContent:'flex-start',
+      alignItems:'center'
+  },
+  MenuItemSelected:{
+      backgroundColor:'#feece7',
+      paddingLeft:16,
+      paddingRight:16,
+      fontSize:20,
+      height:50,
+      flex:1,
+      flexDirection:'row',
+      justifyContent:'flex-start',
+      alignItems:'center'
+  },
+
+  menuItemText:{
+      fontSize:16,
+      color:'#525252'
+  },
+
+  menuItemtextSelected:{
+      fontSize:16,
+      color:'#000000'
+  },
 })
