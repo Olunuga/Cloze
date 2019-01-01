@@ -4,7 +4,7 @@ import { createStackNavigator, createDrawerNavigator,createAppContainer } from "
 
 export default class GoalsScreen extends React.Component {
     static navigationOptions = {
-      drawerLabel: 'Goals'
+      drawerLabel: 'Runway'
     };
   
     render() {

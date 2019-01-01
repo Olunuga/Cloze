@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View , Button, Icon} from 'react-native';
+import { StyleSheet, Text, View , Button, Platform} from 'react-native';
 import { createDrawerNavigator,createMaterialTopTabNavigator,createAppContainer, createStackNavigator } from "react-navigation";
 import ProjectScreen from './Section/Project/ProjectScreen';
 import ResponsibilityScreen from './Section/Responsibility/ResponsibiltyScreen';
-import GoalsScreen from './Section/Goal/GoalsScreen';
+import RunwayScreen from './Section/Runway/RunwayScreen';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -28,10 +28,11 @@ class SettingsScreen extends React.Component {
 }
 
 
-const RunwayTopNavigator = createMaterialTopTabNavigator({
+const GoalsTopNavigator = createMaterialTopTabNavigator({
   Work: HomeScreen,
   Personal: SettingsScreen,
 },{
+  swipeEnabled: Platform.OS == 'ios'? false:true,
   tabBarOptions: {
     labelStyle: {
       fontSize: 12,
@@ -42,11 +43,11 @@ const RunwayTopNavigator = createMaterialTopTabNavigator({
   }
 });
 
-const RunwayStackNavigator = createStackNavigator({
-    Runway : RunwayTopNavigator
+const GoalsStackNavigator = createStackNavigator({
+    Runway : GoalsTopNavigator
   },{
   defaultNavigationOptions: ({navigation})=>({
-    headerTitle:'Runway',
+    headerTitle:'Goals',
     headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color="white" onPress={() => navigation.toggleDrawer()} />,
     headerStyle: {
       backgroundColor: '#f4511e',
@@ -62,10 +63,10 @@ const RunwayStackNavigator = createStackNavigator({
 })
 
 const MyDrawerNavigator = createDrawerNavigator({
-  Runway:RunwayStackNavigator,
+  Runway:RunwayScreen,
   Projects:ProjectScreen,
   Responsibilty: ResponsibilityScreen,
-  Goals:GoalsScreen
+  Goals:GoalsStackNavigator
 },
 {
   drawerType:'slide'
