@@ -2,8 +2,8 @@ import React from 'react';
 import { View , Image, ScrollView, SafeAreaView} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import {NavigationActions} from 'react-navigation';
-import {NavigationStyles} from '../Res/styles';
-import {MenuGroup, MenuItem}  from './NavigationComponent';
+import {NavigationStyles} from './Res/styles';
+import {MenuGroup, MenuItem}  from './Components/NavigationComponent';
 
 export default class NavigationMenu extends React.Component{
     constructor(props) {

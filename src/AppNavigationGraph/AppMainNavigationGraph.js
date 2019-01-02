@@ -9,7 +9,7 @@ import FocusBottomNavigator from './FocusBottomTabNavigationGraph';
 import NonActionableBottomNavigator from './NonActionableBottomTabNavigationGraph';
 import GoalsStackNavigator from './GoalStackNavigationGraph';
 
-import NavigationMenu from '../Components/DrawerNavigationMenu';
+import NavigationMenu from '../DrawerNavigationMenu';
   
   
   const MyDrawerNavigator = createDrawerNavigator({
