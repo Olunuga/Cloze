@@ -2,7 +2,7 @@ import {StyleSheet,Platform } from 'react-native';
 
 export const NavigationStyles = StyleSheet.create({
   container:{
-      marginTop: Platform.OS == 'Ios'? 0:24
+     
   },
   menuGroup:{
       borderTopWidth: 0.5,
@@ -43,7 +43,7 @@ export const NavigationStyles = StyleSheet.create({
   },
 
   menuItemText:{
-      fontSize:16,
+      fontSize:14,
       color:'#525252'
   },
 

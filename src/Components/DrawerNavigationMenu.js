@@ -3,7 +3,7 @@ import { View , Image, ScrollView, SafeAreaView} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import {NavigationActions} from 'react-navigation';
 import {NavigationStyles} from '../Res/styles';
-import {MenuGroup, MenuItem}  from '../Components/NavigationComponent';
+import {MenuGroup, MenuItem}  from './NavigationComponent';
 
 export default class NavigationMenu extends React.Component{
     constructor(props) {
@@ -20,12 +20,13 @@ export default class NavigationMenu extends React.Component{
         routeName: route
         });
         this.props.navigation.dispatch(navigateAction);
-        this.state.selectedMenuId = menuId
+        this.setState({
+            selectedMenuId : menuId
+        })
     }
     
     render () {
         return (
-        <SafeAreaView>
             <View style={NavigationStyles.container}>
                 <ScrollView>
 
@@ -35,7 +36,7 @@ export default class NavigationMenu extends React.Component{
                         <MenuItem 
                         menuId = {1}
                         handleOnClick = {this.navigateToScreen}
-                        open = {'Goals'}
+                        open = {'Collect'}
                         selected = {this.state.selectedMenuId == 1 ? true:false} 
                         icon = {<Ionicons style= {{marginRight:20}} name="md-create" size={18} color="#f4511e"/>}
                         label = {'Collect'}/>
@@ -43,18 +44,18 @@ export default class NavigationMenu extends React.Component{
                        <MenuItem 
                        menuId = {2}
                        handleOnClick = {this.navigateToScreen}
-                       open = {'Goals'}
+                       open = {'Focus'}
                        selected = {this.state.selectedMenuId == 2 ? true:false} 
                        icon={<Ionicons style= {{marginRight:20}} name="ios-aperture" size={18} color="#f4511e"/>}
-                       label = {'Focus'}/>
+                       label = {'Focus (Actionable)'}/>
 
                        <MenuItem 
                        menuId = {3}
                        handleOnClick = {this.navigateToScreen}
-                       open = {'Goals'}
+                       open = {'NonActionable'}
                        selected = {this.state.selectedMenuId == 3 ? true:false} 
                        icon={<Ionicons style= {{marginRight:20}} name="md-albums" size={18} color="#f4511e"/>}
-                       label = {'Organise'}/>
+                       label = {'Non-Actionable'}/>
                    </MenuGroup>
 
 
@@ -93,7 +94,6 @@ export default class NavigationMenu extends React.Component{
 
                 </ScrollView>
             </View>
-        </SafeAreaView>
         );
     }
 }
