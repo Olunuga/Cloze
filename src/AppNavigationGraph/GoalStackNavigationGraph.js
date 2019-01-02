@@ -3,6 +3,7 @@ import { StyleSheet, Text, View , Platform} from 'react-native';
 import CollectScreen from '../Section/Collect/CollectScreen';
 import { createDrawerNavigator,createBottomTabNavigator,createMaterialTopTabNavigator,createAppContainer, createStackNavigator } from "react-navigation";
 import { Ionicons, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import color from '../Res/color';
 
 
 
@@ -37,26 +38,28 @@ const GoalsTopNavigator = createMaterialTopTabNavigator({
       fontSize: 12,
     },
     style: {
-      backgroundColor: '#f4511e',
+      backgroundColor: color.primary,
     },
   }
 });
 
+const toolbar = ({navigation})=>({
+  headerTitle: `${navigation.state.routeName}`,
+  headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color={color.white} onPress={() => navigation.toggleDrawer()} />,
+  headerStyle: {
+    backgroundColor: color.primary,
+    elevation:0,
+    shadowColor: 'transparent',
+    borderBottomWidth: 0,
+  },
+  headerTintColor: color.white,
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+})
+
 export default GoalsStackNavigator = createStackNavigator({
     Goals : GoalsTopNavigator
   },{
-  defaultNavigationOptions: ({navigation})=>({
-    headerTitle:'Goals',
-    headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color="white" onPress={() => navigation.toggleDrawer()} />,
-    headerStyle: {
-      backgroundColor: '#f4511e',
-      elevation:0,
-      shadowColor: 'transparent',
-      borderBottomWidth: 0,
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-  }),
+  defaultNavigationOptions: toolbar
 })

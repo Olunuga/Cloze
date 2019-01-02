@@ -4,54 +4,64 @@ import { createDrawerNavigator,createBottomTabNavigator,createMaterialTopTabNavi
 import { Ionicons, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import FocusScreen from '../Section/Focus/FocusScreen';
 import CalenderScreen from '../Section/Focus/CalenderScreen';
+import color from '../Res/color';
 
 
 
-    //Todo: change this to Next actions Navigator
-    const FocusStackNavigator = createStackNavigator({
-      Focus : FocusScreen
-    },{
-    defaultNavigationOptions: ({navigation})=>({
-      headerTitle:'Focus',
-      headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color="white" onPress={() => navigation.toggleDrawer()} />,
-      headerStyle: {
-        backgroundColor: '#f4511e',
-        elevation:0,
-        shadowColor: 'transparent',
-        borderBottomWidth: 0,
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    }),
-    })
+const toolbar = ({navigation})=>({
+  headerTitle: `${navigation.state.routeName}`,
+  headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color={color.white} onPress={() => navigation.toggleDrawer()} />,
+  headerStyle: {
+    backgroundColor: color.primary,
+    elevation:0,
+    shadowColor: 'transparent',
+    borderBottomWidth: 0,
+  },
+  headerTintColor: color.white,
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
+})
+
+  
+    const NextActionStackNavigator = createStackNavigator({
+      'Next Action' : FocusScreen
+    },
+    {
+    defaultNavigationOptions: toolbar
+    },
+    {
+      initialRouteName: 'Next Action'
+    }
+    )
+
+    const WaitingForStackNavigator = createStackNavigator({
+      'Waiting For' : FocusScreen
+    },
+    {
+    defaultNavigationOptions: toolbar
+    },
+    {
+      initialRouteName: 'Waiting For'
+    }
+    )
 
     const CalenderStackNavigator = createStackNavigator({
       Calender : CalenderScreen
+    },
+    {
+    defaultNavigationOptions: toolbar
     },{
-    defaultNavigationOptions: ({navigation})=>({
-      headerTitle:'Calender',
-      headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color="white" onPress={() => navigation.toggleDrawer()} />,
-      headerStyle: {
-        backgroundColor: '#f4511e',
-        elevation:0,
-        shadowColor: 'transparent',
-        borderBottomWidth: 0,
-      },
-      headerTintColor: '#fff',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
-    }),
-    })
+      initialRouteName: 'Calender'
+    }
+    )
 
-    //Todo: Add waiting for Navigator
+  
 
     export default FocusBottomNavigator = createBottomTabNavigator({
-      'Next Action': FocusStackNavigator,
+      'Next Action': NextActionStackNavigator,
       Calender: CalenderStackNavigator,
-      'Waiting For': FocusStackNavigator,
+      'Waiting For': WaitingForStackNavigator,
     },
     {
       defaultNavigationOptions: ({ navigation }) => ({
@@ -75,8 +85,8 @@ import CalenderScreen from '../Section/Focus/CalenderScreen';
         },
       }),
       tabBarOptions: {
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
+        activeTintColor: color.primary,
+        inactiveTintColor: color.gray,
         labelStyle: {
           fontSize: 12,
           textTransform: 'uppercase'

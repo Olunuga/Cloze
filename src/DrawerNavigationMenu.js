@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import {NavigationActions} from 'react-navigation';
 import {NavigationStyles} from './Res/styles';
 import {MenuGroup, MenuItem}  from './Components/NavigationComponent';
+import color from './Res/color';
 
 export default class NavigationMenu extends React.Component{
     constructor(props) {
@@ -38,7 +39,7 @@ export default class NavigationMenu extends React.Component{
                         handleOnClick = {this.navigateToScreen}
                         open = {'Collect'}
                         selected = {this.state.selectedMenuId == 1 ? true:false} 
-                        icon = {<Ionicons style= {{marginRight:20}} name="md-create" size={18} color="#f4511e"/>}
+                        icon = {<Ionicons style= {{marginRight:20}} name="md-create" size={18} color={color.primary}/>}
                         label = {'Collect'}/>
 
                        <MenuItem 
@@ -46,7 +47,7 @@ export default class NavigationMenu extends React.Component{
                        handleOnClick = {this.navigateToScreen}
                        open = {'Focus'}
                        selected = {this.state.selectedMenuId == 2 ? true:false} 
-                       icon={<Ionicons style= {{marginRight:20}} name="ios-aperture" size={18} color="#f4511e"/>}
+                       icon={<Ionicons style= {{marginRight:20}} name="ios-aperture" size={18} color={color.primary}/>}
                        label = {'Focus (Actionable)'}/>
 
                        <MenuItem 
@@ -54,7 +55,7 @@ export default class NavigationMenu extends React.Component{
                        handleOnClick = {this.navigateToScreen}
                        open = {'NonActionable'}
                        selected = {this.state.selectedMenuId == 3 ? true:false} 
-                       icon={<Ionicons style= {{marginRight:20}} name="md-albums" size={18} color="#f4511e"/>}
+                       icon={<Ionicons style= {{marginRight:20}} name="md-albums" size={18} color={color.primary}/>}
                        label = {'Non-Actionable'}/>
                    </MenuGroup>
 
@@ -66,7 +67,7 @@ export default class NavigationMenu extends React.Component{
                        handleOnClick = {this.navigateToScreen}
                        open = {'Projects'}
                        selected = {this.state.selectedMenuId == 4 ? true:false} 
-                       icon={<Ionicons style= {{marginRight:20}} name="ios-briefcase" size={18} color="#f4511e"/>}
+                       icon={<Ionicons style= {{marginRight:20}} name="ios-briefcase" size={18} color={color.primary}/>}
                        label = {'Projects'}/>
 
                        <MenuItem 
@@ -74,7 +75,7 @@ export default class NavigationMenu extends React.Component{
                        handleOnClick = {this.navigateToScreen}
                        open = {'Responsibilty'}
                        selected = {this.state.selectedMenuId == 5 ? true:false} 
-                       icon={<Ionicons style= {{marginRight:20}} name="ios-person" size={18} color="#f4511e"/>}
+                       icon={<Ionicons style= {{marginRight:20}} name="ios-person" size={18} color={color.primary}/>}
                        label = {'Responsibilities'}/>
 
                        <MenuItem 
@@ -82,7 +83,7 @@ export default class NavigationMenu extends React.Component{
                        handleOnClick = {this.navigateToScreen}
                        open = {'Goals'}
                        selected = {this.state.selectedMenuId == 6 ? true:false} 
-                       icon={<Ionicons style= {{marginRight:20}} name="ios-flag" size={18} color="#f4511e"/>}
+                       icon={<Ionicons style= {{marginRight:20}} name="ios-flag" size={18} color={color.primary}/>}
                        label = {'Goals'}/>
                    </MenuGroup>
 

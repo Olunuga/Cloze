@@ -1,4 +1,5 @@
 import {StyleSheet,Platform } from 'react-native';
+import color from './color';
 
 export const NavigationStyles = StyleSheet.create({
   container:{
@@ -6,24 +7,24 @@ export const NavigationStyles = StyleSheet.create({
   },
   menuGroup:{
       borderTopWidth: 0.5,
-      borderTopColor:'#cccccc',
-      backgroundColor:'white',
+      borderTopColor: color.white70,
+      backgroundColor: color.white,
       paddingTop:5,
       paddingBottom:16,
       marginBottom:10
   },
 
   menuGroupLabel:{
-     color:'gray',
-     paddingLeft:16,
-     paddingBottom:5,
-     paddingTop:5,
-     paddingRight:16
+     color: color.gray,
+     paddingLeft: 16,
+     paddingBottom: 5,
+     paddingTop: 5,
+     paddingRight: 16
   },
   menuItem:{
       paddingLeft:16,
       paddingRight:16,
-      backgroundColor:'white',
+      backgroundColor: color.white,
       height:50,
       flex:1,
       flexDirection:'row',
@@ -31,7 +32,7 @@ export const NavigationStyles = StyleSheet.create({
       alignItems:'center'
   },
   MenuItemSelected:{
-      backgroundColor:'#feece7',
+      backgroundColor: color.primaryLight,
       paddingLeft:16,
       paddingRight:16,
       fontSize:20,
@@ -44,11 +45,11 @@ export const NavigationStyles = StyleSheet.create({
 
   menuItemText:{
       fontSize:14,
-      color:'#525252'
+      color: color.black70
   },
 
   menuItemtextSelected:{
       fontSize:16,
-      color:'#000000'
+      color: color.black
   },
 })
