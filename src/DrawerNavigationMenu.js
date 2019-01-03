@@ -20,10 +20,10 @@ export default class NavigationMenu extends React.Component{
         const navigateAction = NavigationActions.navigate({
         routeName: route
         });
-        this.props.navigation.dispatch(navigateAction);
         this.setState({
             selectedMenuId : menuId
         })
+        this.props.navigation.dispatch(navigateAction);
     }
     
     render () {
