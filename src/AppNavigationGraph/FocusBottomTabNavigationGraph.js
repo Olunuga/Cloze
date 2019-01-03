@@ -13,9 +13,6 @@ const toolbar = ({navigation})=>({
   headerLeft: <Ionicons style= {{marginLeft:16}} name="ios-menu" size={24} color={color.white} onPress={() => navigation.toggleDrawer()} />,
   headerStyle: {
     backgroundColor: color.primary,
-    elevation:0,
-    shadowColor: 'transparent',
-    borderBottomWidth: 0,
   },
   headerTintColor: color.white,
   headerTitleStyle: {
