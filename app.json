@@ -23,7 +23,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cloze.app"
+    },
+    "android": {
+      "package": "com.cloze.app"
+    },
+    "description": ""
   }
 }

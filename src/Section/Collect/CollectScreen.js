@@ -12,7 +12,7 @@ export default class CollectScreen extends React.Component {
         <View style = {{flex:1, justifyContent:'center', alignItems:'center'}}> 
         <Button
           onPress={() => this.props.navigation.navigate('Runway')}
-          title="Go to Runway"
+          title="Over the air update"
         />
         </View>
       );
